@@ -7,3 +7,8 @@ ENV PATH /root/miniconda3/bin:$PATH
 RUN conda update -n base -c defaults conda
 
 WORKDIR     /
+
+ADD /start.sh .
+RUN chmod +x start.sh
+
+ENTRYPOINT ["./start.sh"]
